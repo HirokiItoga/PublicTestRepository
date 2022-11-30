@@ -31,6 +31,7 @@ jobs:
         echo "target: ${{ github.event.inputs.target }}"
         echo "message: ${{ github.event.inputs.message }}"
         echo "dryrun: ${{ github.event.inputs.dryrun }}"
+        echo "dryrun: ${{ github.event.inputs.environment }}"
     - name: Deploy (use environemt secrets)
       run: |
         echo "Deploy target server: ${{ secrets.SAMPLE }}"
