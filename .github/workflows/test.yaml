@@ -35,3 +35,11 @@ jobs:
     - name: Deploy (use environemt secrets)
       run: |
         echo "Deploy target server: ${{ secrets.SAMPLE }}"
+        
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        event-type: update
+        repository: HirokiItoga/TestPublicRepository
+        client-payload: '{"sha": "${{ github.event.inputs.target }}, "env": "${{ github.event.inputs.environment }}"}'
