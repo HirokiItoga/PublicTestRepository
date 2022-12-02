@@ -1,4 +1,4 @@
-name: Manual Deploy
+name: "[${{ github.event.inputs.environment }}]　Manual Deploy"
 
 on:
   workflow_dispatch:
@@ -36,7 +36,7 @@ jobs:
       run: |
         echo "Deploy target server: ${{ secrets.SAMPLE }}"
         
-    - name: Repository Dispatch
+    - name: Repository Dispatch [${{ github.event.inputs.environment }}]
       uses: peter-evans/repository-dispatch@v2
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
