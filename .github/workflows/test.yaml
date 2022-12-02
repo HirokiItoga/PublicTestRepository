@@ -42,4 +42,4 @@ jobs:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         event-type: update
         repository: HirokiItoga/TestPublicRepository
-        client-payload: '{"sha": "${{ github.event.inputs.target }}, "env": "${{ github.event.inputs.environment }}"}'
+        client-payload: '{"sha": "${{ github.event.inputs.target }}", "env": "${{ github.event.inputs.environment }}"}'
