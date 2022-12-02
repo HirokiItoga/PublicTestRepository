@@ -1,4 +1,4 @@
-name: "[${{ github.event.inputs.environment }}]　Manual Deploy"
+name: "Manual Deploy"
 
 on:
   workflow_dispatch:
