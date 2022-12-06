@@ -34,7 +34,7 @@ jobs:
         echo "dryrun: ${{ github.event.inputs.environment }}"
     - name: Deploy (use environemt secrets)
       run: |
-        echo "Deploy target server: ${{ secrets.SAMPLE }}"
+        echo "Deploy target server: ${{ secrets.ENV }}"
         
     - name: Repository Dispatch [${{ github.event.inputs.environment }}]
       uses: peter-evans/repository-dispatch@v2
